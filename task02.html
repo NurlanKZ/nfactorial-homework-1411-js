@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 07</title>
+</head>
+<body>
+    <script>
+        // Task 02
+        
+        // Я прочитал, что "Исполнитель должен вызвать что-то одно: resolve или reject.
+        // Состояние промиса может быть изменено только один раз. Все последующие
+        // вызовы resolve и reject будут проигнорированы:"
+
+        // Поэтому этот promise выведет 1, а второй resolve будет проигнорирован
+
+        let promise = new Promise(function(resolve, reject) {
+        resolve(1);
+
+        setTimeout(() => resolve(2), 1000);
+        });
+
+        promise.then(alert);
+    </script>
+</body>
+</html>
